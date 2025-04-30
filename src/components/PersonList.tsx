@@ -1,21 +1,19 @@
-// fixing it by adding new props
+// define types for the individual structure
 
-// Define a type for a single name
 type Name = {
   first: string;
   last: string;
 };
 
-// Define a type for the array
-type NameListProp = {
-  nameList: Name[];
+type NameList = {
+  name: Name[];
 };
 
-export default function PersonList({ nameList }: NameListProp) {
+export default function PersonList({ name }: NameList) {
   return (
     <ul style={{ listStyle: "none" }}>
-      {nameList.map((list, index) => (
-        <li key={index}>{list.first}</li>
+      {name.map((iname, index) => (
+        <li key={index}>{iname.first}</li>
       ))}
     </ul>
   );
